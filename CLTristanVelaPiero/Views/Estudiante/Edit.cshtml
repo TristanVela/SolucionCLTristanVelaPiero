@@ -1,0 +1,65 @@
+﻿@model EstudianteViewModel
+@{
+    ViewData["Title"] = "Editar estudiante";
+}
+
+<h1>Editar informacion del estudiante</h1>
+
+<div class="row mt-5">
+    <form method="post" asp-action="EditSaved">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6">
+                    <label asp-for="Id"></label>
+                    <input type="text" asp-for="Id" class="form-control" readonly="true" />
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="Nombre"></label>
+                    <input type="text" asp-for="Nombre" class="form-control" />
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <label asp-for="Apellido"></label>
+                    <input type="text" asp-for="Apellido" class="form-control" />
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="DNI"></label>
+                    <input type="text" asp-for="DNI" class="form-control" />
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <label asp-for="FechaNacimiento"></label>
+                    <input type="text" asp-for="FechaNacimiento" class="form-control" />
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="Correo"></label>
+                    <input type="text" asp-for="Correo" class="form-control" />
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <label asp-for="Numero"></label>
+                    <input type="text" asp-for="Numero" class="form-control" />
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="NombreContacto"></label>
+                    <input type="text" asp-for="NombreContacto" class="form-control" />
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <label asp-for="NumeroContacto"></label>
+                    <input type="text" asp-for="NumeroContacto" class="form-control" />
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-primary">Actualizar</button>
+                    <a class="btn btn-primary" asp-action="List">Regresar</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

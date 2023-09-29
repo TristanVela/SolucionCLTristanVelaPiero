@@ -1,0 +1,46 @@
+﻿@model EstudianteListViewModel;
+@{
+    ViewData["Title"] = "List";
+}
+
+<h1>Listado de estudiantes</h1>
+<div class="table-responsive">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>DNI</th>
+                <th>Fecha de Nacimiento</th>
+                <th>Correo</th>
+                <th>Número</th>
+                <th>Nombre de Contacto</th>
+                <th>Número de Contacto</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.List)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Nombre</td>
+                    <td>@item.Apellido</td>
+                    <td>@item.DNI</td>
+                    <td>@item.FechaNacimiento.ToShortDateString()</td>
+                    <td>@item.Correo</td>
+                    <td>@item.Numero</td>
+                    <td>@item.NombreContacto</td>
+                    <td>@item.NumeroContacto</td>
+                    <td>
+                        <a class="btn btn-primary" asp-controller="Estudiante" asp-action="Add">Añadir</a>
+                        <a class="btn btn-success" asp-controller="Estudiante" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                        <a class="btn btn-danger" asp-controller="Estudiante" asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
